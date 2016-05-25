@@ -10,7 +10,11 @@ var User = require('../api/user/user.model');
 
 Thing.find({}).remove(function() {
   Thing.create({
+<<<<<<< HEAD
+    name : 'Development Tools',
+=======
     name : 'Development Tools!',
+>>>>>>> 6fd2cd2b843c6107c20e863008aa35c2b6ca0b1b
     info : 'Integration with popular tools such as Bower, Grunt, Karma, Mocha, JSHint, Node Inspector, Livereload, Protractor, Jade, Stylus, Sass, CoffeeScript, and Less.'
   }, {
     name : 'Server and Client integration',
@@ -46,4 +50,8 @@ User.find({}).remove(function() {
       console.log('finished populating users');
     }
   );
+<<<<<<< HEAD
 });
+=======
+});
+>>>>>>> 6fd2cd2b843c6107c20e863008aa35c2b6ca0b1b
