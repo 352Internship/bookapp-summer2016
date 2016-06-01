@@ -7,6 +7,7 @@
 
 var Thing = require('../api/thing/thing.model');
 var User = require('../api/user/user.model');
+var Items = require('../api/items/items.model');
 
 Thing.find({}).remove(function() {
   Thing.create({
@@ -26,6 +27,24 @@ Thing.find({}).remove(function() {
   },{
     name : 'Deployment Ready',
     info : 'Easily deploy your app to Heroku or Openshift with the heroku and openshift subgenerators'
+  });
+});
+
+Items.find({}).remove(function() {
+  Items.create({
+    name: 'Cat in the Hat',
+    isbn: 1111,
+    info: 'Classic childrens book',
+    type: 'Textbook',
+    active: true
+  },
+  {
+    name: 'ENC1103 Workbook',
+    isbn: 1114,
+    info: 'Required for ENC1103',
+    type: 'Workbook',
+    active: true
+
   });
 });
 
