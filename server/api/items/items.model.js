@@ -10,12 +10,12 @@ var ItemsSchema = new Schema({
     type: String, default: "Textbook",
     enum: ['Textbook', 'Workbook', 'Solution Manual', 'Lab Manual', 'Lab Workbook', 'Study Guide']
   },
-  status: { type: Boolean, }
+  status: { type: Boolean, },
   price: { type: Number, min: 0, max: 1000 },
   negotiable: {
     type: String, default: 'u', // 'u' is undecided
     enum: ['y','n','u'],
-  }
+  },
   timeposted: { type: Date, default: Date.now },
   sellerid: { type: Schema.Types.ObjectId, ref: 'User'}
 });
