@@ -3,11 +3,19 @@
 var _ = require('lodash');
 var Items = require('./items.model');
 
-// Get list of itemss
+// Get list of items
 exports.index = function(req, res) {
-  Items.find(function (err, itemss) {
+  Items.find(function (err, items) {
     if(err) { return handleError(res, err); }
-    return res.status(200).json(itemss);
+    return res.status(200).json(items);
+  });
+};
+
+// Get list of items that are ACTIVE
+exports.activeOnly = function(req, res) {
+  Items.find({ status: true }).find(function (err, items) {
+    if(err) { return handleError(res, err); }
+    return res.status(200).json(items);
   });
 };
 

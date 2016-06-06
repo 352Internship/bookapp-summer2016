@@ -1,9 +1,9 @@
 'use strict';
 
 angular.module('bookappApp')
-  .controller('FindCtrl', function ($scope, itemsService) {
+  .controller('FindCtrl', function ($scope, activeItemsService) {
     // Use the itemsService to fetch all items data
-    $scope.items = itemsService.query();
+    $scope.items = activeItemsService.query();
 
 
   });
