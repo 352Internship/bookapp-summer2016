@@ -1,0 +1,30 @@
+<div ng-include="'components/navbar/navbar.html'"></div>
+
+<div class="container">
+<form name="addItem">
+  <div class="form-group">
+    <input class="form-control" type="text" ng-model="isbn" placeholder="ISBN" />
+  </div>
+  <div class="form-group">
+    <input class="form-control" type="text" ng-model="classcode" placeholder="Classcode" />
+  </div>
+  <div class="form-group">
+    <input class="form-control" type="text" ng-model="price" placeholder="Price" />
+  </div>
+  <div class="form-group">
+    <label>Type</label>
+    <select class="form-control" ng-model="type">
+      <option value="">
+        Select a type
+      </option>
+      <option value="Workbook">
+        Workbook
+      </option>
+      <option value="Textbook">
+        Textbook
+      </option>
+    </select>
+  </div>
+  <button type="submit" ng-click="addItemSubmit()">Add</button>
+</form>
+</div>
