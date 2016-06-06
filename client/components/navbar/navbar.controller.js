@@ -2,10 +2,21 @@
 
 angular.module('bookappApp')
   .controller('NavbarCtrl', function ($scope, $location, Auth) {
-    $scope.menu = [{
-      'title': 'Home',
-      'link': '/'
-    }];
+    $scope.menu = [
+      {
+        'title': 'Home',
+        'link': '/'
+      },
+      {
+        'title': 'Find',
+        'link': '/find'
+      },
+      {
+        'title': 'Add',
+        'link': '/add'
+      },
+
+    ];
 
     $scope.isCollapsed = true;
     $scope.isLoggedIn = Auth.isLoggedIn;

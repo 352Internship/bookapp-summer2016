@@ -32,18 +32,20 @@ Thing.find({}).remove(function() {
 
 Items.find({}).remove(function() {
   Items.create({
-    name: 'Cat in the Hat',
+    classcode: 'C410X',
     isbn: 1111,
-    info: 'Classic childrens book',
+    status: true,
     type: 'Textbook',
-    active: true
+    price: 150,
+    sellerid: "57557f14a6364cc81bf24d93",
   },
   {
-    name: 'ENC1103 Workbook',
-    isbn: 1114,
-    info: 'Required for ENC1103',
+    classcode: 'TT0ENC1',
+    isbn: 1121,
+    status: true,
     type: 'Workbook',
-    active: true
+    price: 50,
+    sellerid: "57557f14a6364cc81bf24d93",
 
   });
 });
