@@ -1,8 +1,10 @@
 'use strict';
 
 angular.module('bookappApp')
-  .controller('AddCtrl', function ($scope, itemsService, $state) {
+  .controller('AddCtrl', function ($scope, itemsService, $state, User) {
 
+    $scope.getCurrentUser = User.get();
+    
     $scope.addItemSubmit = function () {
       var send = itemsService.save({
         isbn: $scope.isbn,
@@ -10,7 +12,8 @@ angular.module('bookappApp')
         price: $scope.price,
         type: $scope.type,
         status: true,
-        sellerid: "57557f14a6364cc81bf24d93"
+        negotiable: $scope.negotiable,
+        sellerid: $scope.getCurrentUser._id
       }, function(data) {
         $state.go('find');
       });
