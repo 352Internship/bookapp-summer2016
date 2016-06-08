@@ -12,6 +12,18 @@
     <input class="form-control" type="text" ng-model="price" placeholder="Price" />
   </div>
   <div class="form-group">
+    <label>Price is negotiable?</label><br />
+    <label class="radio-inline">
+      <input class="" name="negotiable" type="radio" value="y" ng-model="negotiable"/> Yes
+    </label>
+    <label class="radio-inline">
+      <input class="" name="negotiable" type="radio" value="n" ng-model="negotiable"/> No
+    </label>
+    <label class="radio-inline">
+      <input class="" name="negotiable" type="radio" value="u" ng-model="negotiable"/> Undecided
+    </label>
+  </div>
+  <div class="form-group">
     <label>Type</label>
     <select class="form-control" ng-model="type">
       <option value="">
