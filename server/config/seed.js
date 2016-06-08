@@ -7,14 +7,10 @@
 
 var Thing = require('../api/thing/thing.model');
 var User = require('../api/user/user.model');
+var Items = require('../api/items/items.model');
 
 Thing.find({}).remove(function() {
   Thing.create({
-<<<<<<< HEAD
-    name : 'Development Tools',
-=======
-    name : 'Development Tools!',
->>>>>>> 6fd2cd2b843c6107c20e863008aa35c2b6ca0b1b
     info : 'Integration with popular tools such as Bower, Grunt, Karma, Mocha, JSHint, Node Inspector, Livereload, Protractor, Jade, Stylus, Sass, CoffeeScript, and Less.'
   }, {
     name : 'Server and Client integration',
@@ -34,6 +30,26 @@ Thing.find({}).remove(function() {
   });
 });
 
+Items.find({}).remove(function() {
+  Items.create({
+    classcode: 'C410X',
+    isbn: 1111,
+    status: true,
+    type: 'Textbook',
+    price: 150,
+    sellerid: "57557f14a6364cc81bf24d93",
+  },
+  {
+    classcode: 'TT0ENC1',
+    isbn: 1121,
+    status: true,
+    type: 'Workbook',
+    price: 50,
+    sellerid: "57557f14a6364cc81bf24d93",
+
+  });
+});
+
 User.find({}).remove(function() {
   User.create({
     provider: 'local',
@@ -50,8 +66,4 @@ User.find({}).remove(function() {
       console.log('finished populating users');
     }
   );
-<<<<<<< HEAD
 });
-=======
-});
->>>>>>> 6fd2cd2b843c6107c20e863008aa35c2b6ca0b1b
