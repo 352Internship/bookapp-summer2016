@@ -4,16 +4,14 @@ angular.module('bookappApp')
   .controller('NavbarCtrl', function ($scope, $location, Auth) {
     $scope.menu = [
       {
-        'title': 'Home',
-        'link': '/'
-      },
-      {
         'title': 'Find',
-        'link': '/find'
+        'link': '/find',
+        'userLink': true
       },
       {
         'title': 'Add',
-        'link': '/add'
+        'link': '/add',
+        'userLink': true
       },
 
     ];
