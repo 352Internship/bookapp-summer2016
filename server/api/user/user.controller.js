@@ -27,7 +27,6 @@ exports.create = function (req, res, next) {
   var newUser = new User(req.body);
   newUser.provider = 'local';
   newUser.role = 'user';
-  console.log(newUser);
   if(!(newUser.email.substr(-3) === 'edu')) {
     res.status(403).json(['msg']);
   } else {
