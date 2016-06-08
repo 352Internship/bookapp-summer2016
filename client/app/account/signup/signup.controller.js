@@ -11,6 +11,7 @@ angular.module('bookappApp')
       if(form.$valid) {
         if(!($scope.user.email.substr(-3) === "edu")) {
           form.email.$error.email = true;
+          form.email.$invalid = true;
         } else {
           Auth.createUser({
             name: $scope.user.name,
