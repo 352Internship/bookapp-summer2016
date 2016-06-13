@@ -17,6 +17,7 @@ var ItemsSchema = new Schema({
     enum: ['y','n','u'],
   },
   timeposted: { type: Date, default: Date.now },
+  domain: String,
   sellerid: { type: Schema.Types.ObjectId, ref: 'User'}
 });
 
