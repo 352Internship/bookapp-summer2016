@@ -17,6 +17,8 @@ angular.module('bookappApp')
         $scope.items = data;
       });
 
+      $scope.currentDomain = userDomain;
+
     });
 
   });
