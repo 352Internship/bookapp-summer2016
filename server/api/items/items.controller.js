@@ -11,9 +11,9 @@ exports.index = function(req, res) {
   });
 };
 
-// Get list of items that are ACTIVE
+// Get list of items that are ACTIVE & BELONG to your DOMAIN
 exports.activeOnly = function(req, res) {
-  Items.find({ status: true }).find(function (err, items) {
+  Items.find({ status: true, domain: req.body.domain }).find(function (err, items) {
     if(err) { return handleError(res, err); }
     return res.status(200).json(items);
   });
