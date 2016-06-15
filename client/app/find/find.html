@@ -13,6 +13,7 @@
     <li class="list-group-item" ng-repeat="item in items | filter: searchTerm">
         <strong>{{item.isbn}}</strong><br>
         <span class="text-muted">{{item.type}}, ${{item.price}}, {{item.classcode}}</span>
+        <button type="button" ng-click="message(item._id, item.sellerid)">Get book</button>
     </li>
   </ul>
 </div>

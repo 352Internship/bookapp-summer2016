@@ -14,4 +14,8 @@ angular.module('bookappApp')
             isArray: true
           }
         });
+      })
+  .service('transactionService', function ($resource) {
+    // AngularJS will instantiate a singleton by calling "new" on this function
+      return $resource('/api/transactions/:id', { id: '@_id' });
   });
