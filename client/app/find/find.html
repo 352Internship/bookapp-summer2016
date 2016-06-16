@@ -10,9 +10,10 @@
   </div>
   <br />
   <ul class="list-group">
-    <li class="list-group-item" ng-repeat="item in items | filter: searchTerm">
+    <li class="list-group-item animate-repeat" ng-repeat="item in items | filter: searchTerm">
         <strong>{{item.isbn}}</strong><br>
         <span class="text-muted">{{item.type}}, ${{item.price}}, {{item.classcode}}</span>
+        <button class="pull-right" type="button" ng-click="message(item._id, item.sellerid)">Get book</button>
     </li>
   </ul>
 </div>

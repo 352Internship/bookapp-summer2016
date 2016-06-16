@@ -20,6 +20,28 @@ exports.show = function(req, res) {
   });
 };
 
+// Get all transactions for a user
+exports.getAllUsers = function(req, res) {
+  var userId = req.user._id;
+  Transaction.find({ sellerid: userId }).populate('itemid').exec(function (err, transaction) {
+    if(err) { return handleError(res, err); }
+    if(!transaction) { return res.status(404).send('Not Found'); }
+    return res.json(transaction);
+  });
+};
+
+
+// Get count of transactions for a user
+exports.getAllCount = function(req, res) {
+  var userId = req.user._id;
+  Transaction.find({ sellerid: userId }).exec(function (err, transaction) {
+    if(err) { return handleError(res, err); }
+    if(!transaction) { return res.status(404).send('Not Found'); }
+    return res.json([transaction.length]);
+  });
+};
+
+
 // Creates a new transaction in the DB.
 exports.create = function(req, res) {
   Transaction.create(req.body, function(err, transaction) {

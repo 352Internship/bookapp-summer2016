@@ -1,0 +1,13 @@
+<div ng-include="'components/navbar/navbar.html'"></div>
+
+<div class="container">
+  <ul class="list-group">
+    <li class="list-group-item animate-repeat" ng-repeat="transaction in transactions">
+        <strong>{{transaction.itemid.isbn }}, {{transaction.itemid.classcode }}</strong><br>
+        <span class="text-muted">{{transaction.status}}, {{ transaction.timestamp | date }}</span>
+        <div ng-repeat="message in transaction.messages">
+          {{ message.body }}
+        </div>
+    </li>
+  </ul>
+</div>
